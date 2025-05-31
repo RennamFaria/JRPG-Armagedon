@@ -1,5 +1,11 @@
+import { Container } from "@chakra-ui/react"
+
 function Elimination() {
-  return(<></>);
+  return(
+    <Container>
+      
+    </Container>
+    );
 }
 
 export default Elimination
