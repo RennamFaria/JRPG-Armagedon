@@ -1,4 +1,4 @@
-import { Container, Button } from "@chakra-ui/react";
+import { Container, Button, Box } from "@chakra-ui/react";
 
 function Keyboard({ letters, handleLetterClick }) {
   const keyboardElement = letters.map((letter) => {
@@ -12,24 +12,31 @@ function Keyboard({ letters, handleLetterClick }) {
     }
 
     return (
-      <Button
-        onClick={() => handleLetterClick(letter.id)}
-        key={letter.id}
-        value={letter.value}
-        s
-        disable={letter.clicked}
-        colorPalette={colorPalette}
-        w="40px"
-        h="40px"
-        m="4px"
-      >
-        {letter.value}
-      </Button>
+      <Box key={letter.id}>
+        <Button
+          onClick={() => {
+            handleLetterClick(letter.id);
+          }}
+          value={letter.value}
+          disabled={letter.clicked}
+          colorPalette={colorPalette}
+          w="40px"
+          h="40px"
+          m="4px"
+        >
+          {letter.value}
+        </Button>
+      </Box>
     );
   });
 
   return (
-    <Container alignItems="center" justifyContent="center">
+    <Container
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      flexWrap="wrap"
+    >
       {keyboardElement}
     </Container>
   );

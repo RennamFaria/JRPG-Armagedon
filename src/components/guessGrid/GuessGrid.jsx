@@ -1,6 +1,6 @@
-import { Container, HStack, Box } from "@chakra-ui/react";
+import { Container, HStack, Box, Text } from "@chakra-ui/react";
 
-function GuessGrid({ letters, lettersTried }) {
+function GuessGrid({ lettersTried }) {
   const guessesElement = lettersTried.map((letter) => (
     <Box
       w="40px"
@@ -17,7 +17,9 @@ function GuessGrid({ letters, lettersTried }) {
       color="white"
       boxShadow="sm"
     >
-      {letter ? letter : "*"}
+      <Text fontSize="sm" fontWeight="large">
+        {letter ? letter : "*"}
+      </Text>
     </Box>
   ));
   return (
