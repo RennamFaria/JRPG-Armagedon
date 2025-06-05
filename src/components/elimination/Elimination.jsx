@@ -40,7 +40,7 @@ function Elimination({ lifes }) {
         transition="all 0.2s"
         opacity={genre.isDead ? 0.6 : 1}
         _hover={{
-          transform: genre.isDead ? "none" : "translateY(-1px)",
+          transform: genre.isDead ? "none" : "translateY(-3px)",
           boxShadow: genre.isDead ? "sm" : "md",
         }}
       >
