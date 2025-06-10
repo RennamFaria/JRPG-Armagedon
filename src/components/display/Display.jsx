@@ -1,14 +1,25 @@
-import { Container, VStack, Box, Text } from "@chakra-ui/react";
+import { Box, VStack, Text } from "@chakra-ui/react";
 
-function Display({ tittle, bodyText, bgColor, letterColor }) {
+function Display({ title, bodyText, bgColor }) {
   return (
-    <Container display="flex" alignItems="center" justifyContent="center" >
-      <VStack bg={bgColor} rounded="md" boxShadow='xs'>  
-        {/* //make it better */}
-        <Text textStyle="2xl" fontWeight="bold" color={letterColor}>{tittle}</Text>
-        <Text color={letterColor}>{bodyText}</Text>
+    <Box width="100%" maxWidth="580px" mx="auto" my={1}>
+      <VStack
+        bg={bgColor}
+        color="white"
+        width="100%"
+        paddingY={2}
+        paddingX={5}
+        borderRadius="md"
+        boxShadow="lg"
+        textAlign="center"
+        spacing={1}
+      >
+        <Text fontSize="xl" fontWeight="medium">
+          {title}
+        </Text>
+        <Text fontSize="sd">{bodyText}</Text>
       </VStack>
-    </Container>
+    </Box>
   );
 }
 

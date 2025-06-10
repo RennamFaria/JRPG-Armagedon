@@ -115,18 +115,20 @@ const Main = () => {
     });
   };
 
-  function startNewGame(){
-    setLetters(() => createLetters())
-    setGuess(() => createGuess())
-    setLifes(() => createLifes())
+  function startNewGame() {
+    setLetters(() => createLetters());
+    setGuess(() => createGuess());
+    setLifes(() => createLifes());
   }
 
   function renderGameStatus() {
     if (isGameLost) {
       return (
         <Display
-          tittle={"YOU LOST THE GAME"}
-          bodyText={"You lost haha, womp womp, loser stupid bitxch"}
+          title={"Game Over!"}
+          bodyText={
+            "You lost! Now you fated to just play japonese gacha slop for his entire life 💀"
+          }
           bgColor={"Red"}
           letterColor={"White"}
         ></Display>
@@ -136,11 +138,13 @@ const Main = () => {
         <>
           <Confetti recycle={false} numberOfPieces={1000} />
           <Display
-          tittle={"YOU WIN THE GAME"}
-          bodyText={"Good one budy! You are the best of then all my slay queen 💅"}
-          bgColor={"Green"}
-          letterColor={"White"}
-        ></Display>
+            title={"You Win!"}
+            bodyText={
+              "Good one budy! Your taste in games is top tier, ma man. 🫡"
+            }
+            bgColor={"Green"}
+            letterColor={"White"}
+          ></Display>
         </>
       );
     } else {
@@ -169,7 +173,17 @@ const Main = () => {
           justifyContent="center"
           mt={4}
         >
-          <Button onClick={startNewGame}>New Game</Button>
+          <Button
+            borderColor="white"
+            borderWidth="2px"
+            borderRadius="5px"
+            w="335px"
+            fontWeight="bold"
+            bgColor="#11b5e5"
+            onClick={startNewGame}
+          >
+            New Game
+          </Button>
         </Container>
       ) : null}
     </main>

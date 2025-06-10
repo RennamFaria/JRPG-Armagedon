@@ -3,15 +3,15 @@ import { Container, Box, HStack, Text } from "@chakra-ui/react";
 function Elimination({ lifes }) {
   const getTagColors = (index) => {
     const colorMap = {
-      "0": { bg: "#E34F26", color: "white" },
-      "1": { bg: "#1572B6", color: "white" },
-      "2": { bg: "#F7DF1E", color: "black" },
-      "3": { bg: "#61DAFB", color: "black" },
-      "4": { bg: "#3178C6", color: "white" },
-      "5": { bg: "#339933", color: "white" },
-      "6": { bg: "#3776AB", color: "white" },
-      "7": { bg: "#CC342D", color: "white" },
-      "8": { bg: "#6E4C8B", color: "white" },
+      0: { bg: "#E34F26", color: "white" },
+      1: { bg: "#1572B6", color: "white" },
+      2: { bg: "#F7DF1E", color: "black" },
+      3: { bg: "#61DAFB", color: "black" },
+      4: { bg: "#3178C6", color: "white" },
+      5: { bg: "#339933", color: "white" },
+      6: { bg: "#3776AB", color: "white" },
+      7: { bg: "#CC342D", color: "white" },
+      8: { bg: "#6E4C8B", color: "white" },
       // Default colors for other values
       default: { bg: "gray.600", color: "white" },
     };
@@ -52,13 +52,16 @@ function Elimination({ lifes }) {
   });
 
   return (
-    <Container
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      maxW="container.lg"
-    >
-      <HStack spacing={2} flexWrap="wrap">
+    <Container display="flex" alignItems="center" justifyContent="center">
+      <HStack
+        spacing={2}
+        paddingTop={5}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        flexWrap="wrap"
+        maxWidth="500px"
+      >
         {eliminationElement}
       </HStack>
     </Container>
